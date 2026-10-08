@@ -1,0 +1,22 @@
+"""Palindrome ⭐
+
+Check whether a word is a palindrome.
+
+Example:
+
+Enter word: madam
+Palindrome
+
+Another:
+
+Enter word: python
+Not a palindrome
+
+Hint: Use slicing.
+
+word[::-1]"""
+text=input("enter text to whether its palindrome or not")
+if text == text[::-1]:
+  print("it's palindrome")
+else:
+  print("not palindrome")
