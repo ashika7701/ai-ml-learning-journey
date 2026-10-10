@@ -1,231 +1,537 @@
-Python Tuples — Complete Notes
-A tuple is a built-in Python data type used to store multiple items in a single variable. Tuples are ordered and immutable, which means their elements cannot be changed after creation.
-1. Tuple Creation
-You can create a tuple using parentheses () with comma-separated values.
-Example 1: Creating a tuple
-# Tuple of integersnumbers = (10, 20, 30, 40)# Tuple of stringsnames = ("Arun", "Priya", "Kumar")# Tuple with different data typesdata = (10, "Python", 3.14, True)print(numbers)print(names)print(data)
+# 6. Tuples in Python
 
+---
 
+## 1. Introduction to Tuples
 
-Output:
+A **tuple** is a built-in Python data type used to store multiple items in a single variable.
+
+**Key Characteristics:**
+
+- **Ordered:** Maintains the order of elements.
+- **Immutable:** Elements cannot be reassigned after creation.
+- **Duplicates allowed:** The same value can appear multiple times.
+- **Multiple data types:** Can store different data types.
+- **Indexing and slicing:** Supports accessing individual elements and ranges.
+
+**Example:**
+
+```python
+numbers = (10, 20, 30, 40)
+
+print(numbers)
+print(type(numbers))
+```
+
+**Output:**
+
+```text
 (10, 20, 30, 40)
+<class 'tuple'>
+```
+
+---
+
+## 2. Tuple Creation
+
+Tuples are commonly created using parentheses `()` and comma-separated values.
+
+### Example 1: Tuple of Integers
+
+```python
+numbers = (10, 20, 30, 40, 50)
+
+print(numbers)
+```
+
+**Output:**
+
+```text
+(10, 20, 30, 40, 50)
+```
+
+### Example 2: Tuple of Strings
+
+```python
+names = ("Arun", "Priya", "Kumar")
+
+print(names)
+```
+
+**Output:**
+
+```text
 ('Arun', 'Priya', 'Kumar')
+```
+
+### Example 3: Tuple with Different Data Types
+
+```python
+data = (10, "Python", 3.14, True)
+
+print(data)
+```
+
+**Output:**
+
+```text
 (10, 'Python', 3.14, True)
+```
 
+### Example 4: Single-Element Tuple
 
-Example 2: Creating a single-element tuple
-To create a tuple with only one element, you must include a comma.
-a = (10,)b = (10)print(type(a))print(type(b))
+A single-element tuple must contain a trailing comma.
 
+```python
+a = (10,)
+b = (10)
 
+print(type(a))
+print(type(b))
+```
 
-Output:
+**Output:**
+
+```text
 <class 'tuple'>
 <class 'int'>
+```
 
+**Note:** `(10,)` is a tuple, whereas `(10)` is an integer.
 
-Remember: (10,) is a tuple, but (10) is an integer.
-Example 3: Creating a tuple without parentheses
-Python also allows tuples to be created without parentheses.
-numbers = 10, 20, 30print(numbers)print(type(numbers))
+---
 
+## 3. Tuple Indexing
 
+**Indexing** is used to access individual elements from a tuple.
 
-Output:
-(10, 20, 30)
-<class 'tuple'>
+- **Positive indexing:** Starts from `0`.
+- **Negative indexing:** Starts from `-1` at the end.
 
+### Example 1: Positive Indexing
 
+```python
+numbers = (10, 20, 30, 40, 50)
 
-2. Tuple Indexing
-Indexing is used to access individual elements from a tuple.
-Python indexing starts from 0.
-Example tuple
-10
-Index 0
+print(numbers[0])
+print(numbers[2])
+print(numbers[4])
+```
 
-20
-Index 1
+**Output:**
 
-30
-Index 2
-
-40
-Index 3
-
-
-
-Example 1: Positive indexing
-numbers = (10, 20, 30, 40, 50)print(numbers[0])print(numbers[2])print(numbers[4])
-
-
-
-Output:
+```text
 10
 30
 50
+```
 
+### Example 2: Negative Indexing
 
-Example 2: Negative indexing
-Negative indexing accesses elements from the end of the tuple.
-numbers = (10, 20, 30, 40, 50)print(numbers[-1])print(numbers[-2])print(numbers[-5])
+```python
+numbers = (10, 20, 30, 40, 50)
 
+print(numbers[-1])
+print(numbers[-2])
+print(numbers[-5])
+```
 
+**Output:**
 
-Output:
+```text
 50
 40
 10
+```
 
+**Index Reference:**
 
-Remember:
-- tuple[0] → First element
-- tuple[-1] → Last element
-- tuple[-2] → Second-last element
+| Positive Index | Negative Index | Value |
+|---:|---:|---:|
+| `0` | `-5` | `10` |
+| `1` | `-4` | `20` |
+| `2` | `-3` | `30` |
+| `3` | `-2` | `40` |
+| `4` | `-1` | `50` |
 
-3. Tuple Slicing
-Slicing is used to access a range of elements from a tuple.
-Syntax
+**Note:** Accessing an invalid index raises an `IndexError`.
+
+---
+
+## 4. Tuple Slicing
+
+**Slicing** is used to access a range of elements from a tuple.
+
+**Syntax:**
+
+```python
 tuple[start:stop:step]
+```
 
+- `start`: Starting index (included).
+- `stop`: Ending index (excluded).
+- `step`: Number of positions to skip.
 
+### Example 1: Basic Slicing
 
-- start — Starting index, included.
-- stop — Ending index, excluded.
-- step — Number of positions to skip.
-Example 1: Basic slicing
-numbers = (10, 20, 30, 40, 50, 60)print(numbers[1:4])print(numbers[:3])print(numbers[3:])
+```python
+numbers = (10, 20, 30, 40, 50, 60)
 
+print(numbers[1:4])
+print(numbers[:3])
+print(numbers[3:])
+```
 
+**Output:**
 
-Output:
+```text
 (20, 30, 40)
 (10, 20, 30)
 (40, 50, 60)
+```
 
+### Example 2: Slicing with Step
 
-Example 2: Slicing with a step
-numbers = (10, 20, 30, 40, 50, 60)print(numbers[::2])print(numbers[1::2])print(numbers[::-1])
+```python
+numbers = (10, 20, 30, 40, 50, 60)
 
+print(numbers[::2])
+print(numbers[1::2])
+```
 
+**Output:**
 
-Output:
+```text
 (10, 30, 50)
 (20, 40, 60)
-(60, 50, 40, 30, 20, 10)
+```
 
+### Example 3: Reversing a Tuple
 
-Important: Slicing creates a new tuple containing the selected elements. It does not modify the original tuple.
+```python
+numbers = (10, 20, 30, 40, 50)
 
-4. Tuple Unpacking
-Tuple unpacking means assigning the elements of a tuple to multiple variables in a single statement.
-Example 1: Basic unpacking
-student = ("Arun", 22, "Python")name, age, course = studentprint(name)print(age)print(course)
+print(numbers[::-1])
+```
 
+**Output:**
 
+```text
+(50, 40, 30, 20, 10)
+```
 
-Output:
+**Note:** Slicing returns a new tuple and does not modify the original tuple.
+
+---
+
+## 5. Tuple Unpacking
+
+**Tuple unpacking** is the process of assigning tuple elements to multiple variables in a single statement.
+
+### Example 1: Basic Unpacking
+
+```python
+student = ("Arun", 22, "Python")
+
+name, age, course = student
+
+print(name)
+print(age)
+print(course)
+```
+
+**Output:**
+
+```text
 Arun
 22
 Python
+```
 
+### Example 2: Unpacking Numbers
 
-Here:
-- name receives "Arun".
-- age receives 22.
-- course receives "Python".
-Example 2: Swapping variables
-Python allows you to swap two variables without using a temporary variable.
-a = 10b = 20a, b = b, aprint(a)print(b)
+```python
+numbers = (10, 20, 30)
 
+a, b, c = numbers
 
+print(a)
+print(b)
+print(c)
+```
 
-Output:
+**Output:**
+
+```text
+10
+20
+30
+```
+
+### Example 3: Swapping Variables
+
+```python
+a = 10
+b = 20
+
+a, b = b, a
+
+print(a)
+print(b)
+```
+
+**Output:**
+
+```text
 20
 10
+```
 
+### Example 4: Unpacking with the `*` Operator
 
-Example 3: Unpacking with the * operator
-The * operator collects multiple remaining elements into a list.
-numbers = (10, 20, 30, 40, 50)first, *middle, last = numbersprint(first)print(middle)print(last)
+The `*` operator collects the remaining elements into a list.
 
+```python
+numbers = (10, 20, 30, 40, 50)
 
+first, *middle, last = numbers
 
-Output:
+print(first)
+print(middle)
+print(last)
+```
+
+**Output:**
+
+```text
 10
 [20, 30, 40]
 50
+```
 
+**Note:** Without starred unpacking, the number of variables must match the number of elements.
 
-Important: The number of variables must match the number of tuple elements unless you use * unpacking.
+---
 
-5. Tuple vs List
-Both tuples and lists store multiple items, but they differ in how their elements can be changed.
-Feature	Tuple	List
-Syntax	(10, 20, 30)	[10, 20, 30]
-Ordered	Yes	Yes
-Mutable	No	Yes
-Indexing	Supported	Supported
-Slicing	Supported	Supported
-Duplicate values	Allowed	Allowed
-Different data types	Allowed	Allowed
-Append or remove items	Not directly supported	Supported
-Typical use	Fixed data	Changeable data
-Example: List is mutable
-numbers = [10, 20, 30]numbers[0] = 100numbers.append(40)print(numbers)
+## 6. Tuple vs List
 
+Both tuples and lists store multiple items, but their main difference is **mutability**.
 
+| Feature | Tuple | List |
+|---|---|---|
+| Syntax | `(10, 20, 30)` | `[10, 20, 30]` |
+| Ordered | Yes | Yes |
+| Mutable | No | Yes |
+| Indexing | Supported | Supported |
+| Slicing | Supported | Supported |
+| Duplicates | Allowed | Allowed |
+| Different data types | Allowed | Allowed |
+| Adding or removing items | Not directly supported | Supported |
 
-Output:
+### Example 1: List Is Mutable
+
+```python
+numbers = [10, 20, 30]
+
+numbers[0] = 100
+numbers.append(40)
+
+print(numbers)
+```
+
+**Output:**
+
+```text
 [100, 20, 30, 40]
+```
 
+### Example 2: Tuple Is Immutable
 
-Example: Tuple is immutable
-numbers = (10, 20, 30)numbers[0] = 100print(numbers)
+```python
+numbers = (10, 20, 30)
 
+numbers[0] = 100
 
+print(numbers)
+```
 
-Output:
-TypeError
+**Output:**
 
+```text
+TypeError: 'tuple' object does not support item assignment
+```
 
-The error occurs because tuple elements cannot be reassigned.
-When should you use each?
-- Use a tuple for fixed collections, such as RGB color values or coordinates.
-- Use a list when you need to add, remove, or modify elements.
+**Explanation:** Tuple elements cannot be reassigned after creation.
 
-6. Important Tuple Operations
-Finding the length
-numbers = (10, 20, 30, 40)print(len(numbers))
+### When to Use Tuples
 
+- When storing fixed collections of values.
+- When representing coordinates or RGB color values.
+- When individual elements should not be reassigned.
 
+### When to Use Lists
 
-Output: 4
-Counting occurrences
-numbers = (10, 20, 10, 30, 10)print(numbers.count(10))
+- When elements need to be modified.
+- When items need to be added or removed.
+- When working with collections that change frequently.
 
+---
 
+## 7. Useful Tuple Operations
 
-Output: 3
-Finding an element's index
-numbers = (10, 20, 30, 40)print(numbers.index(30))
+### Example 1: `len()` — Find the Number of Elements
 
+```python
+numbers = (10, 20, 30, 40)
 
+print(len(numbers))
+```
 
-Output: 2
-Checking membership
-numbers = (10, 20, 30, 40)print(20 in numbers)print(50 not in numbers)
+**Output:**
 
+```text
+4
+```
 
+### Example 2: `count()` — Count Occurrences
 
-Output:
+```python
+numbers = (10, 20, 10, 30, 10)
+
+print(numbers.count(10))
+```
+
+**Output:**
+
+```text
+3
+```
+
+### Example 3: `index()` — Find the First Matching Index
+
+```python
+numbers = (10, 20, 30, 40)
+
+print(numbers.index(30))
+```
+
+**Output:**
+
+```text
+2
+```
+
+### Example 4: Membership Operators
+
+```python
+numbers = (10, 20, 30, 40)
+
+print(20 in numbers)
+print(50 not in numbers)
+```
+
+**Output:**
+
+```text
 True
 True
+```
 
+### Example 5: Tuple Concatenation
 
-Concatenating tuples
-a = (10, 20)b = (30, 40)result = a + bprint(result)
+The `+` operator combines two tuples into a new tuple.
 
+```python
+a = (10, 20)
+b = (30, 40)
 
+result = a + b
 
-Output: (10, 20, 30, 40)
+print(result)
+```
+
+**Output:**
+
+```text
+(10, 20, 30, 40)
+```
+
+### Example 6: Tuple Repetition
+
+The `*` operator repeats tuple elements.
+
+```python
+numbers = (10, 20)
+
+print(numbers * 3)
+```
+
+**Output:**
+
+```text
+(10, 20, 10, 20, 10, 20)
+```
+
+---
+
+## 8. Practice Tasks
+
+### Level 1: Tuple Creation
+
+1. Create a tuple containing five integers and print it.
+2. Create a tuple containing your name, age, and course.
+3. Create a single-element tuple containing `100` and print its type.
+
+### Level 2: Tuple Indexing
+
+4. Create a tuple containing six numbers. Print the first, third, and last elements.
+5. Print the second-last element using negative indexing.
+6. Access and print an element using its index.
+
+### Level 3: Tuple Slicing
+
+7. Create a tuple containing eight numbers. Print the first four elements.
+8. Print the last three elements.
+9. Print every second element.
+10. Reverse the tuple using slicing.
+
+### Level 4: Tuple Unpacking
+
+11. Unpack a tuple containing three student details into three variables.
+12. Unpack `(10, 20, 30)` into three variables and print their sum.
+13. Swap two variables using tuple unpacking.
+14. Use the `*` operator to collect the middle elements of a tuple.
+
+### Level 5: Tuple vs List
+
+15. Create a list and a tuple containing the same three numbers.
+16. Modify the first element of the list.
+17. Try modifying the first element of the tuple and observe the error.
+18. Count how many times `20` appears in `(10, 20, 30, 20, 40, 20)`.
+19. Find the index of `30` in a tuple.
+20. Check whether `40` exists in a tuple using the `in` operator.
+
+---
+
+## 9. Quick Revision
+
+| Concept | Description |
+|---|---|
+| Tuple | Ordered, immutable collection |
+| Creation | Parentheses `()` and comma-separated values |
+| Indexing | Access individual elements |
+| Slicing | Access a range of elements |
+| Unpacking | Assign elements to multiple variables |
+| `len()` | Returns the number of elements |
+| `count()` | Counts occurrences of a value |
+| `index()` | Returns the first matching index |
+| `+` | Concatenates tuples |
+| `*` | Repeats tuple elements |
+
+---
+
+### Key Takeaway
+
+**Tuples are ordered and immutable, while lists are ordered and mutable.**
+
+Use tuples for fixed collections and lists when the collection needs modification.
