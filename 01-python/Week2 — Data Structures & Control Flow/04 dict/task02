@@ -1,0 +1,63 @@
+""" Level 2: Add and Update Items
+Create this dictionary:
+student = {    "name": "Ashika",    "age": 22,    "mark": 450}
+
+
+
+Your task:
+1. Add a new key "city" with the value "Madurai".
+2. Update "age" from 22 to 23.
+3. Add a new key "course" with the value "Python".
+4. Print the updated dictionary."""
+# Online Python compiler (interpreter)
+# Write and run Python online using this editor.
+#create dict
+dict={"name":"ashika","age":22,"mark":450,"course":"python"}
+#print whole db
+print(dict)
+#print keys
+print(dict.keys())
+#print values
+print(dict.values())
+#update the dict
+dict["city"]="madurai"
+print(dict)
+#a=10,a=20
+#modify
+dict["age"]=23
+print(dict)
+#REMOVE
+dict.pop("age")
+print(dict)
+#checking the element
+print("name" in dict)
+print("email" in dict)
+#looping
+for values in dict:
+  print(values)
+
+for values in dict.keys():
+  print(values)
+for values in dict.values():
+  print(values)
+
+name="banana"
+a=name.count("a")
+b=name.count("b")
+n=name.count("n")
+name1={
+  'b':b,'a':a,'n':n
+}
+print(name1)
+
+students = {
+    "Ashika": 450,
+    "Roshan": 430,
+    "Rahul": 470,
+    "Nithya": 420
+}
+
+  
+top_student = max(students, key=students.get)
+print(top_student, students[top_student])
+
