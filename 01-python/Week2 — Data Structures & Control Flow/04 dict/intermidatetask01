@@ -1,0 +1,35 @@
+"""
+🐍 Level 4 — Task 1: Student Marks Analysis
+You are given a dictionary containing student names and their marks.
+students = {    "Ashika": 450,    "Roshan": 380,    "Rahul": 470,    "Nithya": 320,    "Jegan": 490,    "Priya": 410}
+
+
+
+Your task:
+1. Create a new dictionary containing students who scored 400 or above.
+2. Print the new dictionary.
+3. Calculate and print the number of students who passed (scored 400 or above).
+4. Calculate and print the average mark of those students.
+"""
+
+students = {
+    "Ashika": 450,
+    "Roshan": 380,
+    "Rahul": 470,
+    "Nithya": 320,
+    "Jegan": 490,
+    "Priya": 410
+}
+updatedict={}
+num=0
+
+sum=0
+for k,v in students.items():
+  if v > 400:
+    updatedict[k]=v
+    num+=1
+    sum=sum+v
+    
+print(updatedict)   
+print("how much no. of student above 400", num)
+print("AVG of above 400",sum/num)
