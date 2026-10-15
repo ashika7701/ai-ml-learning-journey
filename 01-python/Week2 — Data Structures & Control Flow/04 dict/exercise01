@@ -1,0 +1,10 @@
+# Online Python compiler (interpreter)
+# Write and run Python online using this editor.
+#create dict
+dict={"name":"ashika","age":22,"mark":450,"course":"python"}
+#print whole db
+print(dict)
+#print keys
+print(dict.keys())
+#print values
+print(dict.values())
